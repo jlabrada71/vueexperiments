@@ -1,10 +1,34 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
-</template>
+   <div id="app">
+    <v-app id="inspire">
+      <v-navigation-drawer app>
+        <!-- -->
+      </v-navigation-drawer>
+
+      <v-app-bar app>
+        <!-- -->
+      </v-app-bar>
+
+      <!-- Sizes your content based upon application components -->
+      <v-main>
+
+        <!-- Provides the application the proper gutter -->
+        <v-container fluid>
+          <h1>Hello World</h1>
+
+          <!-- If using vue-router -->
+          <router-view></router-view>
+        </v-container>
+      </v-main>
+
+      <v-footer app>
+        <v-btn block>Block Button</v-btn>
+        <!-- -->
+      </v-footer>
+  </v-app>
+</div>
+
+ </template>
 
 <style lang="scss">
 #app {
