@@ -1,16 +1,24 @@
 {
-  "name": "exp2",
+  "name": "experiments",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build": "npm run installworkbox",
+    "buildbuild": "vue-cli-service build && workbox injectManifest workbox-config.js",
+    "installvue": "npm install -g @vue/cli && npm run buildbuild",
+    "installworkbox": "npm install -g workbox-cli && npm run installvue"
   },
   "dependencies": {
+    "body-parser": "1.19.0",
+    "cookie-parser": "1.4.5",
     "core-js": "^3.6.5",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "morgan": "1.10.0",
     "register-service-worker": "^1.7.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
