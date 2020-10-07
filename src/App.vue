@@ -1,54 +1,60 @@
 <template>
-   <div id="app">
-    <v-app id="inspire">
-      <v-navigation-drawer app>
-        <!-- -->
-      </v-navigation-drawer>
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          transition="scale-transition"
+          width="40"
+        />
 
-      <v-app-bar app>
-        <!-- -->
-      </v-app-bar>
+        <v-img
+          alt="Vuetify Name"
+          class="shrink mt-1 hidden-sm-and-down"
+          contain
+          min-width="100"
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+          width="100"
+        />
+      </div>
 
-      <!-- Sizes your content based upon application components -->
-      <v-main>
+      <v-spacer></v-spacer>
 
-        <!-- Provides the application the proper gutter -->
-        <v-container fluid>
-          <h1>Hello World</h1>
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
 
-          <!-- If using vue-router -->
-          <router-view></router-view>
-        </v-container>
-      </v-main>
-
-      <v-footer app>
-        <v-btn block>Block Button</v-btn>
-        <!-- -->
-      </v-footer>
+    <v-content>
+      <HelloWorld/>
+    </v-content>
   </v-app>
-</div>
+</template>
 
- </template>
+<script>
+import HelloWorld from './components/HelloWorld.vue';
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+export default {
+  name: 'App',
 
-#nav {
-  padding: 30px;
+  components: {
+    HelloWorld,
+  },
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+  data: () => ({
+    //
+  }),
+};
+</script>

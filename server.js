@@ -1,5 +1,5 @@
 // server.js
-const express = require( 'express');
+const express = require('express');
 const path = require('path');
 const createError = require('http-errors');
 const cors = require('cors');
@@ -8,7 +8,6 @@ const logger = require('morgan');
 const RoutesRegister = require('./routes/routes-register');
 
 const result = require('dotenv').config({ path: `${__dirname}/.env` });
-
 
 const app = express();
 
@@ -41,7 +40,6 @@ app.use((err, req, res, next) => {
   console.log(err);
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
 
   // render the error page
   res.status(err.status || 500);
